@@ -1,17 +1,17 @@
 [
   {
     "title": "Django Chat",
-    "image": "./images/screenshot.png",
+    "image": "./images/dj.png",
     "url": "https://github.com/AdithyaKrishna169/Django-Chat"
   },
   {
-    "title": "Astro Docs",
-    "image": "./images/astro-docs.png",
-    "url": "https://docs.astro.build/"
+    "title": "Hacker Rank",
+    "image": "./images/hackerrank.png",
+    "url": "https://www.hackerrank.com/adithyakrishna_"
   },
   {
-    "title": "<div>RIOTS",
-    "image": "./images/divriots.png",
-    "url": "https://divriots.com/"
+    "title": "Code Chef",
+    "image": "./images/codechef.png",
+    "url": "https://www.codechef.com/users/adithya169"
   }
 ]
