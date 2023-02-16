@@ -6,11 +6,9 @@ import { getShowcase } from "~/data/showcase";
 const sites = await getShowcase();
 ---
 
-<ContentSection title="Showcase" id="showcase">
+<ContentSection title="Projects" id="showcase">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+   <p class="text-center md:px-16 text-sm md:text-lg" > My personal projects featured on my portfolio website represent my passion for using technology to <span class="text-primary">solve real-world problems</span> and create meaningful experiences for people. </p> 
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -18,7 +16,7 @@ const sites = await getShowcase();
     </div>
     <p class="text-right text-sm">
       <a class="text-primary" href="https://astro.build/showcase/">
-        ...and more &rarr;
+        <!-- ...and more &rarr; -->
       </a>
     </p>
   </div>
