@@ -1,7 +1,7 @@
 [
   {
     "title": "Django Chat",
-    "image": "./images/polinations.png",
+    "image": "./images/screenshot.png",
     "url": "https://github.com/AdithyaKrishna169/Django-Chat"
   },
   {
@@ -13,20 +13,5 @@
     "title": "<div>RIOTS",
     "image": "./images/divriots.png",
     "url": "https://divriots.com/"
-  },
-  {
-    "title": "Designcember",
-    "image": "./images/designcember.png",
-    "url": "https://designcember.com/"
-  },
-  {
-    "title": "The Firebase Blog",
-    "image": "./images/firebase-blog.png",
-    "url": "https://firebase.blog/"
-  },
-  {
-    "title": "Corset",
-    "image": "./images/corset.png",
-    "url": "https://corset.dev/"
   }
 ]
