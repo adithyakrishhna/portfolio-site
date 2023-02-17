@@ -45,13 +45,13 @@ const navItems: Array<NavItem> = [
       <ThemeSwitcher />
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
-      <div class="fixed inset-0 bg-default px-8 py-4 text-default">
-        <div class="space-y-4" role="dialog" aria-modal="true">
+      <div class="fixed border-b-2 border-gray-600 shadow-lg inset-0 backdrop-blur-lg bg-default h-fit px-8 py-4 text-default rounded-b-2xl">
+        <div class="space-y-4 pb-8" role="dialog" aria-modal="true">
           <header class="text-right">
             <button
               id="close-nav-button"
               type="button"
-              class="btn"
+              class="btn border-none"
               aria-label="Close navigation"
             >
               <Icon pack="mdi" name="close" class="h-8" />
@@ -61,13 +61,13 @@ const navItems: Array<NavItem> = [
             <Icon name="logomark" class="h-16" />
           </div>
           <nav>
-            <ul class="flex flex-col">
+            <ul class="flex flex-col items-center gap-3">
               {
                 navItems.map(({ title, url }) => (
                   <li>
-                    <a class="block py-4 text-center text-xl" href={url}>
-                      {title}
-                    </a>
+                      <a class="rounded-lg flex items-center justify-center w-48 gap-3 border-2 border-current px-6 py-4 text-center text-xl" href={url}>
+                        {title}
+                      </a>
                   </li>
                 ))
               }
