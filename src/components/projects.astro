@@ -1,9 +1,9 @@
 ---
 import ContentSection from "~/components/content-section.astro";
-import ShowcaseCard from "~/components/showcase-card.astro";
-import { getShowcase } from "~/data/showcase";
+import ProjectCard from "~/components/project-card.astro";
+import { getProjects } from "~/data/projects";
 
-const sites = await getShowcase();
+const projects = await getProjects();
 ---
 
 <ContentSection title="Projects & Achievements" id="projects">
@@ -14,7 +14,7 @@ const sites = await getShowcase();
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {sites.map((site) => <ShowcaseCard site={site} />)}
+      {projects.map((project) => <ProjectCard project={project} />)}
     </div>
     <p class="text-right text-sm">
       <a class="text-primary" href="https://astro.build/showcase/">

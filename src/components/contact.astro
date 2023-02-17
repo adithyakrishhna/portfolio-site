@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<ContentSection title="Contact me" id="contact">
+  <Fragment slot="lead">
+    <p class="text-center text-sm md:px-16 md:text-lg">
+      Thank you for taking the time to visit my portfolio website. If you have any questions, comments, or inquiries,
+       I would love to hear from you! Please feel free to contact me using email. Additionally,
+       you can connect with me via my social media handles as I am always open to new opportunities and collaborations.
+       I will do my best to respond to your message as soon as possible. Thank you for reaching out!</p>
+    <!-- <span class="text-primary">modern</span> web. -->
+    <!-- <span class="text-primary">Lightning-fast</span> -->
+    <!-- performance meets <span class="text-primary">powerful</span> developer experience. -->
+  </Fragment>
+  <div>
+    <a
+      href="mailto:adithyakrish169@gmail.com" target="_blank"
+      class="rounded-lg flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+    >
+      <Icon pack="mdi" name="email" class="h-8"/>
+      <span>Send Mail</span>
+    </a>
+    
+  </div>
+</ContentSection>
