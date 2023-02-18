@@ -12,3 +12,14 @@ a,
   
 }
 
+::-webkit-scrollbar {
+  @apply w-1 h-1;
+}
+
+::-webkit-scrollbar-track{
+  @apply bg-transparent rounded-full m-1;
+}
+
+::-webkit-scrollbar-thumb{
+  @apply bg-gray-600 rounded-full hover:bg-indigo-400;
+}
