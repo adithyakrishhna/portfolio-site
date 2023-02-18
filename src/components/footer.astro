@@ -3,6 +3,8 @@ import { Icon } from "astro-icon";
 import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
 
+const today = new Date();
+
 const links: Array<FooterLink> = [
   {
     url: "#",
@@ -26,7 +28,7 @@ const links: Array<FooterLink> = [
   },
 ];
 ---
-<footer class="relative flex h-64 items-center justify-center">
+<footer class="relative flex flex-col h-64 items-center justify-center">
   <div class="absolute inset-0 overflow-hidden opacity-40">
     <HeroImage />
   </div>
@@ -47,15 +49,10 @@ const links: Array<FooterLink> = [
       ))
     }
   </ul>
+  <div class="mt-6 pb-2 flex flex-col text-xs">
+    &copy; {today.getFullYear()} Adithya Krishna
+  </div>
+  <div class="inline opacity-75 text-xs">
+    <a href="/acknowledgement">Acknowledgement</a>
+  </div>
 </footer>
-
-<style>
-  @media (min-width: 768px) {
-    ul.grid > li:nth-child(n+2):nth-child(-n+4) a {
-      target-new: tab;
-      -moz-tab-content: url("about:blank");
-      -webkit-tab-content: url("about:blank");
-      tab-content: url("about:blank");
-    }
-  }
-</style>
