@@ -1,16 +1,16 @@
 // adapted from https://github.com/withastro/astro.build/blob/112bdc723b3ba305997c95d7ce02304624d0d3ce/src/data/showcase/index.ts
 
-import type { ShowcaseSite } from "~/types";
-import sitesData from "./sites.json";
+import type { Projects } from "~/types";
+import sitesData from "./projects.json";
 
 const allImages = import.meta.glob<ImageMetadata>("./images/*.{png,jpg,jpeg}", {
   eager: true,
   import: "default",
 });
 
-let _loadShowcase: Promise<Array<ShowcaseSite>>;
+let _loadProjects: Promise<Array<Projects>>;
 
-async function loadShowcase(): Promise<Array<ShowcaseSite>> {
+async function loadProjects(): Promise<Array<Projects>> {
   const sites = await Promise.all(
     sitesData.map(async (site) => {
       if (!(site.image in allImages)) {
@@ -31,7 +31,7 @@ async function loadShowcase(): Promise<Array<ShowcaseSite>> {
   return sites;
 }
 
-export async function getShowcase() {
-  _loadShowcase = _loadShowcase || loadShowcase();
-  return _loadShowcase;
+export async function getProjects() {
+  _loadProjects = _loadProjects || loadProjects();
+  return _loadProjects;
 }

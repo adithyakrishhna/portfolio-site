@@ -1,10 +1,8 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import { Icon } from "astro-icon";
-import astronautImage from "~/assets/astronaut.png";
+import astronautImage from "~/assets/astron.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
-import GitHubCorner from "./github-corner.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -12,7 +10,6 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
@@ -20,14 +17,27 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+    <div class="flex flex-col items-center md:pl-32">
+      <h3 class="text-xl md:text-xl lg:text-xl text-stone-100">Hello, I'm</h3>
+      <div class="gradient-text font-extrabold tracking-tighter text-6xl md:text-3xl max-md:text-4xl max-sm:text-5xl">
+        Adithya Krishna
       </div>
+
+      <h3 class=" text-stone-100 py-4">Aspiring Professional</h3> 
+      <div class="flex gap-4">
+        <a href="https://github.com/adithyaKrishna169/" target="_blank">
+          <img src="https://simpleicons.org/icons/github.svg" alt="GitHub" width="30px" height="30px" style="filter: invert(1);"/>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/adithyakrishnaeemani/" target="_blank">
+          <img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn" width="30px" height="30px" style="filter: invert(1);"/>
+        </a>
+        
+        <a href="https://instagram.com/adithyakrishna._?igshid=MDM4ZDc5MmU=" target="_blank">
+          <img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram" width="30px" height="30px" style="filter: invert(1);"/>
+        </a>
+      </div>
+    </div>
     </h2>
     <div
       id="astronaut"

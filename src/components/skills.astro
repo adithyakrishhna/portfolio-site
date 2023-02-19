@@ -1,0 +1,86 @@
+---
+import SkillsList from "~/components/skills-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { Skills } from "~/types";
+
+const frameworks: Array<Skills> = [
+  {
+    title: "Python",
+    icon: "simple-icons:python",
+    url: "https://reactjs.org/",
+  },
+  {
+    title: "C language",
+    icon: "simple-icons:c",
+    url: "https://vuejs.org/",
+  },
+  {
+    title: "C++",
+    icon: "simple-icons:cplusplus",
+    url: "https://preactjs.com/",
+  },
+  {
+    title: "Django",
+    icon: "simple-icons:django",
+    url: "https://www.solidjs.com/",
+  },
+  {
+    title: "Java Script",
+    icon: "simple-icons:javascript",
+    url: "https://svelte.dev/",
+  },
+  {
+    title: "DBMS",
+    icon: "simple-icons:googlecloud",
+    url: "https://lit.dev/",
+  },
+];
+
+const platforms: Array<Skills> = [
+  {
+    title: "Data Structures",
+    icon: "simple-icons:codeforces",
+    url: "https://www.netlify.com/",
+  },
+  {
+    title: "Algorithms",
+    icon: "simple-icons:leetcode",
+    url: "https://vercel.com/",
+  },
+  {
+    title: "Problem Solving",
+    icon: "simple-icons:visualstudiocode",
+    url: "https://pages.cloudflare.com/",
+  },
+  {
+    title: "Machine Learning",
+    icon: "simple-icons:jupyter",
+    url: "https://render.com/",
+  },
+  {
+    title: "Operating Systems",
+    icon: "simple-icons:linux",
+    url: "https://pages.github.com/",
+  },
+  {
+    title: "Version Control",
+    icon: "fa-brands:github",
+    url: "https://docs.gitlab.com/ee/user/project/pages/",
+  },
+];
+---
+
+<ContentSection title="Skills" id="skills">
+  <SkillsList
+
+    items={frameworks}
+    title="Frameworks"
+    url="https://docs.astro.build/core-concepts/framework-components/"
+  />
+  <SkillsList
+
+    items={platforms}
+    title="Platforms"
+    url="https://docs.astro.build/guides/deploy/"
+  />
+</ContentSection>

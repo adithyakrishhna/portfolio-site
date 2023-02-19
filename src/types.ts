@@ -1,13 +1,7 @@
-export interface CompatibilityItem {
+export interface Skills {
   icon: string;
   title: string;
   url: string;
-}
-
-export interface FeatureItem {
-  description: string;
-  icon: string;
-  title: string;
 }
 
 export interface FooterLink {
@@ -21,7 +15,7 @@ export interface NavItem {
   url: string;
 }
 
-export interface ShowcaseSite {
+export interface Projects {
   title: string;
   image: ImageMetadata;
   url: string;

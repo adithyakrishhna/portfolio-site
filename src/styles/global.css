@@ -3,10 +3,23 @@ a,
 .btn {
   @apply transition-colors duration-200;
   @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  @apply bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500;
+  
+}
+
+::-webkit-scrollbar {
+  @apply w-1 h-1;
+}
+
+::-webkit-scrollbar-track{
+  @apply bg-transparent rounded-full m-1;
+}
+
+::-webkit-scrollbar-thumb{
+  @apply bg-gray-600 rounded-full hover:bg-indigo-400;
 }
