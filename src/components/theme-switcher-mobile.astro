@@ -7,16 +7,16 @@ import { Icon } from "astro-icon";
   TODO don't hardcode these values
 -->
 <button
-  id="theme-switcher"
+  id="theme-switcher-mobile"
   type="button"
-  class="-ml-14 origin-[right_center] scale-0 transition-all duration-500 hidden sm:block"
+  class="-ml-14 origin-[right_center] scale-0 transition-all duration-500 block sm:hidden"
 >
-  <div id="icon-theme-light">
-    <Icon name="theme/light-sm" class="h-8" />
+  <div id="icon-theme-theme-switcher-mobile-light">
+    <Icon name="theme/light" class="h-8" />
     <span class="sr-only">Use light theme</span>
   </div>
-  <div id="icon-theme-dark" class="hidden">
-    <Icon name="theme/dark-sm" class="h-8" />
+  <div id="icon-theme-theme-switcher-mobile-dark" class="hidden">
+    <Icon name="theme/dark" class="h-8" />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>
@@ -25,7 +25,7 @@ import { Icon } from "astro-icon";
   import invariant from "tiny-invariant";
 
   const themes = ["light", "dark"];
-  const button = document.querySelector("#theme-switcher");
+  const button = document.querySelector("#theme-switcher-mobile");
   invariant(button, "button should not be null");
 
   const getThemeCurrent = () => document.documentElement.dataset.theme;
@@ -39,11 +39,11 @@ import { Icon } from "astro-icon";
   const updateIcon = () => {
     const themeCurrent = getThemeCurrent();
     document
-      .querySelector(`#icon-theme-${themeCurrent}`)
+      .querySelector(`#icon-theme-theme-switcher-mobile-${themeCurrent}`)
       ?.classList.add("hidden");
     const themeNext = getThemeNext();
     document
-      .querySelector(`#icon-theme-${themeNext}`)
+      .querySelector(`#icon-theme-theme-switcher-mobile-${themeNext}`)
       ?.classList.remove("hidden");
   };
 
@@ -58,7 +58,7 @@ import { Icon } from "astro-icon";
 </script>
 
 <style>
-  :global(.fixed-header) #theme-switcher {
+  :global(.fixed-header) #theme-switcher-mobile {
     @apply ml-0 scale-100;
   }
 </style>

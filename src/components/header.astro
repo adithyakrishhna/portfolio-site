@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+import ThemeSwitcherMobile from "./theme-switcher-mobile.astro";
 
 const navItems: Array<NavItem> = [
   { title: "About", url: "#about"},
@@ -22,6 +23,7 @@ const navItems: Array<NavItem> = [
   </a>
   <div>
     <div class="flex items-center gap-6">
+      <ThemeSwitcherMobile />
       <nav class="hidden sm:block">
         <ul class="flex items-center gap-6">
           {
