@@ -1,26 +1,21 @@
 ---
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
+import ContactForm from "./contact-form.astro";
 ---
 
 <ContentSection title="Contact me" id="contact">
   <Fragment slot="lead">
+    <a class="text-sm font-medium rounded-lg flex items-center justify-center gap-3 border-2 border-current px-6 py-4 w-fit">
+      <Icon pack="mdi" name="email" class="h-6"/>
+      <span class="select-all">hello@adithya-krishna.com</span>
+    </a>
     <!-- <span class="text-primary select-all">hello@adithya-krishna.com</span> -->
     <p class="text-center text-sm md:px-16 md:text-lg">
-      Thank you for taking the time to visit my portfolio website. If you have any questions, comments, or inquiries,
-       I would love to hear from you! Please feel free to contact me using email. Additionally,
+      Thank you for taking the time to visit my portfolio website. <span class="text-primary">Please feel free to contact me using contact form below</span>. Additionally,
        you can connect with me via my social media handles as I am always open to new opportunities and collaborations.
-       I will do my best to respond to your message as soon as possible. Thank you for reaching out!</p>
+       I will do my best to respond to your message as soon as possible. Thank you for reaching out!
+      </p>
   </Fragment>
-  <div class="flex flex-col lg:flex-row gap-4">
-    <a href="mailto:hello@adithya-krishna.com" target="_blank" class="rounded-lg flex items-center justify-center border-2 border-current px-6 py-4 w-full lg:w-48">
-      <Icon pack="mdi" name="email" class="h-6 md:h-8 mr-2"/>
-      <span class="text-base">Send Mail</span>
-    </a>
-    <a href="https://www.linkedin.com/in/adithyakrishnaeemani" target="_blank" class="rounded-lg flex items-center justify-center border-2 border-current px-6 py-4 w-full lg:w-48">
-      <Icon pack="mdi" name="linkedin" class="h-6 md:h-8 mr-2"/>
-      <span class="text-base">Connect</span>
-    </a>
-  </div>
-  
+  <ContactForm/>
 </ContentSection>
