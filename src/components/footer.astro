@@ -37,7 +37,7 @@ const links: Array<FooterLink> = [
       links.map((link, index) => (
         <li>
           <a
-            class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
+            class="hover:text-secondary hover:transition duration-200 flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
             href={link.url}
             target={index > 0 && index < 4 ? "_blank" : null}
             rel={index > 0 && index < 4 ? "noopener noreferrer" : null}
