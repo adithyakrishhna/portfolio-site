@@ -12,11 +12,11 @@ import { Icon } from "astro-icon/components";
   class="-ml-14 origin-[right_center] scale-0 transition-all duration-500 hidden sm:block"
 >
   <div id="icon-theme-light">
-    <Icon name="theme/light-sm" class="size-8" />
+    <Icon class={"dark:text-white text-black"} name="mdi:white-balance-sunny" class="size-6" />
     <span class="sr-only">Use light theme</span>
   </div>
   <div id="icon-theme-dark" class="hidden">
-    <Icon name="theme/dark-sm" class="size-8" />
+    <Icon class={"dark:text-white text-black"} name="mdi:moon-and-stars" class="size-6" />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>
