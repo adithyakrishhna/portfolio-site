@@ -1,33 +1,150 @@
-/* TODO: consider creating <Button> and <GradientText> components */
-a,
-.btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  -webkit-tap-highlight-color: transparent;
-}
+/**
+ * This is your main CSS file processed by Tailwind CSS v4.
+ */
 
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500;
-  
-}
+ @import 'tailwindcss'; /* Imports Tailwind's base, components, utilities and variants */
 
-::-webkit-scrollbar {
-  @apply w-1 h-1;
-}
-
-::-webkit-scrollbar-track{
-  @apply bg-transparent rounded-full m-1;
-}
-
-::-webkit-scrollbar-thumb{
-  @apply bg-gray-600 rounded-full hover:bg-indigo-400;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: var(--color-text);
-}
+ /**
+  * @theme Configuration Block
+  * Defines custom properties, fonts, and other theme aspects for Tailwind v4.
+  * The color variables defined here use `var()` to reference the actual theme-specific
+  * values set by the [data-theme] selectors below.
+  */
+ @theme {
+   /* Define base fonts */
+   --font-sans:
+     InterVariable, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+ 
+   /* Define semantic color variables that Tailwind will use */
+   --color-primary: var(--color-primary-actual);
+   --color-secondary: var(--color-secondary-actual);
+ 
+   --text-color-default: var(--color-text-actual);
+   --text-color-offset: var(--color-text-offset-actual);
+ 
+   --background-color-default: var(--color-background-actual);
+   --background-color-offset: var(--color-background-offset-actual);
+ 
+   --border-color-default: var(--color-border-actual);
+ 
+   /* You could add other theme values here if needed, like spacing, breakpoints etc. */
+   /* Example: --breakpoint-lg: 1024px; */
+ }
+ 
+ /**
+  * Theme Definitions (Light & Dark)
+  * These rules define the actual color values for the semantic variables
+  * based on the `data-theme` attribute on the <html> or <body> tag.
+  *
+  * We've replaced the v3 `theme(...)` function with the corresponding
+  * default Tailwind color values.
+  */
+ :root[data-theme="light"],
+ [data-theme="light"] { /* Target root or any element with the attribute */
+   --color-primary-actual: #ec4899; /* Equivalent to pink-500 */
+   --color-secondary-actual: #6366f1; /* Equivalent to indigo-500 */
+   --color-text-actual: #111827; /* Equivalent to gray-900 */
+   --color-text-offset-actual: #4b5563; /* Equivalent to gray-600 */
+   --color-background-actual: #f9fafb; /* Equivalent to gray-50 */
+   --color-background-offset-actual: #f3f4f6; /* Equivalent to gray-100 */
+   --color-border-actual: rgba(17, 24, 39, 0.1); /* Equivalent to gray-900 / 10% */
+ }
+ 
+ :root[data-theme="dark"],
+ [data-theme="dark"] { /* Target root or any element with the attribute */
+   --color-primary-actual: #f472b6; /* Equivalent to pink-400 */
+   --color-secondary-actual: #818cf8; /* Equivalent to indigo-400 */
+   --color-text-actual: #f9fafb; /* Equivalent to gray-50 */
+   --color-text-offset-actual: #9ca3af; /* Equivalent to gray-400 */
+   --color-background-actual: #111827; /* Equivalent to gray-900 */
+   --color-background-offset-actual: #1f2937; /* Equivalent to gray-800 */
+   --color-border-actual: rgba(249, 250, 251, 0.1); /* Equivalent to gray-50 / 10% */
+ }
+ 
+ /**
+  * Base Layer and Compatibility Styles
+  */
+ @layer base {
+   /*
+    * The default border color has changed to `currentColor` in Tailwind CSS v4,
+    * so we've added these compatibility styles to make sure everything still
+    * looks the same as it did with Tailwind CSS v3 using gray-200 as default.
+    * If you prefer your theme's border color to be the default, change
+    * `var(--color-gray-200, currentColor)` to `var(--border-color-default, currentColor)`.
+    * Defaulting to gray-200 might be safer if not all elements should use the theme border.
+    */
+   *,
+   ::after,
+   ::before,
+   ::backdrop,
+   ::file-selector-button {
+     /* Using tw default gray-200 (#e5e7eb) for compatibility */
+     border-color: var(--tw-color-gray-200, currentColor);
+     /* Or use your theme border: border-color: var(--border-color-default, currentColor); */
+   }
+ 
+   /* Set default text and background colors using the theme variables */
+   body {
+       background-color: var(--background-color-default);
+       color: var(--text-color-default);
+   }
+ 
+   /* Input autofill styles */
+   input:-webkit-autofill,
+   input:-webkit-autofill:hover,
+   input:-webkit-autofill:focus,
+   input:-webkit-autofill:active {
+       transition: background-color 5000s ease-in-out 0s;
+       -webkit-text-fill-color: var(--text-color-default); /* Use theme text color */
+       /* Note: You might need to adjust background based on theme too, often tricky with autofill */
+   }
+ }
+ 
+ /**
+  * Custom Component/Utility Styles
+  */
+ 
+ /* TODO: consider creating <Button> and <GradientText> components */
+ a,
+ .btn {
+   @apply transition-colors duration-200;
+   /* Apply hover using the theme's secondary color variable */
+   @apply hover:text-[--color-secondary];
+   -webkit-tap-highlight-color: transparent;
+ }
+ 
+ /* Example Button Style using theme variables */
+ .btn-primary {
+     @apply px-4 py-2 rounded;
+     background-color: var(--color-primary);
+     color: white; /* Assuming primary colors have light text */
+     @apply hover:opacity-90;
+ }
+ 
+ .gradient-text {
+   @apply bg-clip-text text-transparent;
+   /* Consider making gradient colors themeable too if needed */
+   @apply bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-500;
+   /* Example using theme colors (might need adjustment): */
+   /* background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary)); */
+ }
+ 
+ /* Scrollbar Styles */
+ ::-webkit-scrollbar {
+   @apply w-1 h-1;
+ }
+ 
+ ::-webkit-scrollbar-track{
+   @apply bg-transparent rounded-full m-1;
+ }
+ 
+ ::-webkit-scrollbar-thumb{
+   /* Using fixed colors, could be themed if desired */
+   @apply bg-gray-600 rounded-full hover:bg-indigo-400;
+   /* Example using theme offset text color */
+   /* background-color: var(--text-color-offset); */
+ }
+ 
+ /* Apply theme variables to other base elements as needed */
+ /* Example: hr { border-color: var(--border-color-default); } */
