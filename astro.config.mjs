@@ -1,7 +1,6 @@
-import image from "@astrojs/image";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
+import icon from "astro-icon"
 // https://astro.build/config
 import sitemap from "@astrojs/sitemap";
 
@@ -11,12 +10,8 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   site: "https://adithya-krishna.com/",
-  integrations: [tailwind(), image({
-    serviceEntryPoint: "@astrojs/image/sharp"
-  }), sitemap(), robotsTxt()]
-  // vite: {
-  //   ssr: {
-  //     external: ["svgo"],
-  //   },
-  // },
+  integrations: [icon(), sitemap(), robotsTxt()],
+  vite: {
+    plugins: [tailwindcss()]
+  },
 });

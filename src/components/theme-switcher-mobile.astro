@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <!--
@@ -12,11 +12,11 @@ import { Icon } from "astro-icon";
   class="-ml-14 origin-[right_center] scale-0 transition-all duration-500 block sm:hidden"
 >
   <div id="icon-theme-theme-switcher-mobile-light">
-    <Icon name="theme/light" class="h-8" />
+    <Icon name="theme/light" class="size-8" />
     <span class="sr-only">Use light theme</span>
   </div>
   <div id="icon-theme-theme-switcher-mobile-dark" class="hidden">
-    <Icon name="theme/dark" class="h-8" />
+    <Icon name="theme/dark" class="size-8" />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>
@@ -58,6 +58,8 @@ import { Icon } from "astro-icon";
 </script>
 
 <style>
+  @reference "../styles/global.css";
+
   :global(.fixed-header) #theme-switcher-mobile {
     @apply ml-0 scale-100;
   }

@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import ContactForm from "./contact-form.astro";
 ---
@@ -17,12 +17,12 @@ import ContactForm from "./contact-form.astro";
   <div class="flex flex-col gap-6">
     
     <div class="flex items-center justify-center gap-2">
-      <Icon pack="mdi" name="user" class="h-7 md:h-10"/>
+      <Icon name="mdi:user" class="size-7 md:size-10"/>
       <h1 class="text-md md:text-xl font-medium">Adithya Krishna</h1>
     </div>
   
     <div class="flex items-center justify-center gap-3">
-      <Icon pack="mdi" name="email" class="h-6 md:h-8"/>
+      <Icon name="mdi:email" class="size-6 md:size-8"/>
       <h1 class="text-md md:text-xl font-medium md:select-all">hello@adithya-krishna.com</h1>
     </div>
 

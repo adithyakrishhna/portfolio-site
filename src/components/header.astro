@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 import ThemeSwitcherMobile from "./theme-switcher-mobile.astro";
@@ -16,7 +16,7 @@ const navItems: Array<NavItem> = [
   id="page-header"
   class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#" aria-label="Back to Home">
+  <a class="flex items-center gap-3 hover:text-default!" href="#" aria-label="Back to Home">
     
     <img class="h-12 w-12"  src="/Adithya-Krishna-sitelogo.svg" alt="Adithya Krishna Site-logo">
     
@@ -43,7 +43,7 @@ const navItems: Array<NavItem> = [
         class="btn sm:hidden"
         aria-label="Navigation"
       >
-        <Icon pack="mdi" name="menu" class="h-8" />
+        <Icon  name="mdi:menu" class="size-8" />
       </button>
       <ThemeSwitcher />
     </div>
@@ -57,7 +57,7 @@ const navItems: Array<NavItem> = [
               class="btn border-none mt-1"
               aria-label="Close navigation"
             >
-              <Icon pack="mdi" name="close" class="h-8" />
+              <Icon  name="mdi:close" class="size-8" />
             </button>
           </header>
           <div class="flex justify-center">
@@ -128,6 +128,7 @@ const navItems: Array<NavItem> = [
 
 <noscript>
   <style>
+@reference "../styles/global.css";
     #open-nav-button {
       display: none;
     }
@@ -135,6 +136,7 @@ const navItems: Array<NavItem> = [
 </noscript>
 
 <style>
+@reference "../styles/global.css";
   .fixed-header {
     @apply fixed top-0 bottom-auto;
     @apply border-default bg-default text-default;

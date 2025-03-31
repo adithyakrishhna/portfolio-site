@@ -1,21 +1,17 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 ---
 
 <ContentSection title="About me" id="about">
   <Fragment slot="lead">
     <p class="text-center text-sm md:px-16 md:text-lg">
-      Hello! I'm Adithya Krishna Eemani, a dynamic professional deeply rooted in
-      Computer Science and Engineering, specializing in cutting-edge domains
-      such as <span class="text-primary"
+      Hello! I'm Adithya Krishna Eemani, a dynamic professional rooted in Computer Science and Engineering, specializing in
+       <span class="text-primary"
         >Artificial Intelligence and Machine Learning</span
-      >. My unwavering commitment centers around catalyzing transformative
-      change through innovative solutions, operational efficiency, and
-      pioneering code development. I am dedicated to empowering businesses and
-      enhancing lives by creating groundbreaking technological solutions. If you
-      seek a motivated and <span class="text-primary">skilled developer</span> with
-      a fervent passion for innovation, then I would love to hear from you!
+      >. Currently, I work at Accenture, contributing to innovative solutions and operational efficiency. I am proficient in <span class="text-primary">Data Structures and Algorithms (DSA) and have strong problem-solving skills</span> enabling me to write efficient code and develop robust solutions. My unwavering commitment centers around catalyzing transformative change through pioneering code development.
+
+      If you seek a motivated and skilled developer with a fervent passion for innovation, then I would love to hear from you!
     </p>
   </Fragment>
   <div class="flex flex-col gap-4 lg:flex-row">
@@ -24,7 +20,7 @@ import ContentSection from "~/components/content-section.astro";
       target="_blank"
       class="flex items-center justify-center gap-3 rounded-lg border-2 border-current px-6 py-4"
     >
-      <Icon pack="mdi" name="book" class="h-8" />
+      <Icon name="mdi:book" class="size-8" />
       <span>My Resume</span>
     </a>
     <a
@@ -32,7 +28,7 @@ import ContentSection from "~/components/content-section.astro";
       target="_blank"
       class="flex w-full items-center justify-center rounded-lg border-2 border-current px-6 py-4 lg:w-48"
     >
-      <Icon pack="mdi" name="linkedin" class="h-8 md:h-8 mr-2" />
+      <Icon name="mdi:linkedin" class="size-8 md:size-8 mr-2" />
       <span class="text-base">Connect</span>
     </a>
   </div>

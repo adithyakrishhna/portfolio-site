@@ -1,5 +1,6 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
 import astronautImage from "~/assets/astron.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
@@ -24,19 +25,19 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         Adithya Krishna
       </h1>
 
-      <p class=" text-stone-100 py-4">Aspiring Professional</p> 
+      <p class=" text-stone-100 py-4">Software Engineer</p> 
 
       <div class="flex gap-4">
         <a href="https://github.com/adithyakrishhna/" target="_blank">
-          <img src="https://simpleicons.org/icons/github.svg" alt="GitHub" width="27px" height="27px" style="filter: invert(1);"/>
+          <Icon name={"mdi:github"} size={28}/>
         </a>
         
         <a href="https://www.linkedin.com/in/adithyakrishnaeemani/" target="_blank">
-          <img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn" width="27px" height="27px" style="filter: invert(1);"/>
+         <Icon name={"mdi:linkedin"} size={28}/>
         </a>
         
         <a href="https://instagram.com/adithyakrishhna" target="_blank">
-          <img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram" width="27px" height="27px" style="filter: invert(1);"/>
+          <Icon name={"mdi:instagram"} size={28} />
         </a>
       </div>
 
@@ -63,6 +64,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <noscript>
   <style>
+@reference "../styles/global.css";
     #splash-bg-fallback {
       display: block;
     }
@@ -70,6 +72,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 </noscript>
 
 <style>
+@reference "../styles/global.css";
   @keyframes float {
     0% {
       transform: translate3d(0, 0, 0);
