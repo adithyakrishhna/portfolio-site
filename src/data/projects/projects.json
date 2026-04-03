@@ -1,8 +1,13 @@
 [
+    {
+    "title": "Work Orchestration Engine",
+    "image": "./images/AI-Powered Work Orchestration Engine.png",
+    "url": "https://github.com/AdithyaKrishhna/work-orchestration-engine"
+  },
   {
     "title": "Django Chat",
     "image": "./images/dj.png",
-    "url": "https://github.com/AdithyaKrishna169/Django-Chat"
+    "url": "https://github.com/AdithyaKrishhna/Django-Chat"
   },
   {
     "title": "Hacker Rank",
